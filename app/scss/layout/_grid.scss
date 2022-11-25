@@ -9,7 +9,7 @@
   width: min(100% - 40px, 1024px);
   margin-inline: auto;
 
-  @include utils.breakpoint(large) {
+  @include utils.breakpointMin(large) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
   }
@@ -20,8 +20,21 @@
   }
   &__main {
     background-color: rgb(189, 225, 45);
+    @include utils.breakpointMin(medium) {
+      background-color: rgb(87, 250, 0);
+    }
+    @include utils.breakpointMin(large) {
+      background-color: rgb(250, 158, 0);
+    }
   }
   &__sidebar {
     background-color: rgb(225, 45, 192);
+
+    @include utils.breakpointMax(medium) {
+      text-align: center;
+    }
+    @include utils.breakpointMax(small) {
+      text-align: right;
+    }
   }
 }
